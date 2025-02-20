@@ -1,7 +1,8 @@
-import http from 'node:http'
+import { app } from "./app";
 
-const server = http.createServer((req,res) => {
-  return res.end("Hello World")
+app.listen({
+  host: '0.0.0.0', // makes it accessible on the front end
+  port:3333
+}).then(()=>{
+  console.log("HTTP SERVER RUNNING")
 })
-
-server.listen(3333)
